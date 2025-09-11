@@ -50,27 +50,27 @@
       </h2>
 
       <!-- COMBOBOX -->
-      <div class="flex justify-center mb-10">
-        <select id="selectorSemanas" class="bg-black text-white border border-teal-500 rounded px-4 py-2">
-          <option value="">-- Selecciona una semana --</option>
-          <option value="Semana1.html">Semana 1</option>
-          <option value="Semana2.html">Semana 2</option>
-          <option value="Semana3.html">Semana 3</option>
-          <option value="semanas/semana4.html">Semana 4</option>
-          <option value="semanas/semana5.html">Semana 5</option>
-          <option value="semanas/semana6.html">Semana 6</option>
-          <option value="semanas/semana7.html">Semana 7</option>
-          <option value="semanas/semana8.html">Semana 8</option>
-          <option value="semanas/semana9.html">Semana 9</option>
-          <option value="semanas/semana10.html">Semana 10</option>
-          <option value="semanas/semana11.html">Semana 11</option>
-          <option value="semanas/semana12.html">Semana 12</option>
-          <option value="semanas/semana13.html">Semana 13</option>
-          <option value="semanas/semana14.html">Semana 14</option>
-          <option value="semanas/semana15.html">Semana 15</option>
-          <option value="semanas/semana16.html">Semana 16</option>
-        </select>
-      </div>
+<div class="flex justify-center mb-10">
+    <select id="selectorSemanas" class="bg-black text-white border border-teal-500 rounded px-4 py-2">
+      <option value="">-- Selecciona una semana --</option>
+      <option value="semana1.html">Semana 1</option>
+      <option value="Semana2.html">Semana 2</option>
+      <option value="semana3.html">Semana 3</option>
+      <option value="semanas/semana4.html">Semana 4</option>
+      <option value="semanas/semana5.html">Semana 5</option>
+      <option value="semanas/semana6.html">Semana 6</option>
+      <option value="semanas/semana7.html">Semana 7</option>
+      <option value="semanas/semana8.html">Semana 8</option>
+      <option value="semanas/semana9.html">Semana 9</option>
+      <option value="semanas/semana10.html">Semana 10</option>
+      <option value="semanas/semana11.html">Semana 11</option>
+      <option value="semanas/semana12.html">Semana 12</option>
+      <option value="semanas/semana13.html">Semana 13</option>
+      <option value="semanas/semana14.html">Semana 14</option>
+      <option value="semanas/semana15.html">Semana 15</option>
+      <option value="semanas/semana16.html">Semana 16</option>
+    </select>
+  </div>
     </div>
   </main>
 
@@ -91,7 +91,15 @@
       });
     });
   </script>
+  <!-- SCRIPT para redirigir -->
+<script>
+    document.getElementById('selectorSemanas').addEventListener('change', function() {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
 
 </body>
 </html>
-
