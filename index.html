@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Desarrollo de Aplicaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente medieval -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    .titulo-medieval {
+      font-family: 'UnifrakturCook', cursive;
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-100 min-h-screen flex flex-col">
+
+  <!-- ENCABEZADO -->
+  <header class="bg-teal-700 text-white py-10 shadow-md">
+    <h1 class="titulo-medieval text-5xl font-bold text-center text-black drop-shadow-lg">
+      Desarrollo de Aplicaciones
+    </h1>
+    <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
+      Jeremy Barzola Caso
+    </p>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-1 flex items-center justify-center bg-gray-900 relative overflow-hidden">
+
+    <!-- IMAGEN IZQUIERDA CON DEGRADADO -->
+    <div class="absolute inset-y-0 left-0 w-1/2">
+      <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-transparent z-10"></div>
+      <img src="1.png" alt="Imagen izquierda"
+           class="h-full w-full object-cover opacity-50">
+    </div>
+
+    <!-- IMAGEN DERECHA CON DEGRADADO -->
+    <div class="absolute inset-y-0 right-0 w-1/2">
+      <div class="absolute inset-0 bg-gradient-to-l from-gray-900 via-transparent to-transparent z-10"></div>
+      <img src="2.png" alt="Imagen derecha"
+           class="h-full w-full object-cover opacity-50">
+    </div>
+
+    <!-- CONTENIDO CENTRADO (TÍTULO Y COMBOBOX) -->
+    <div class="relative z-20 text-center">
+      <h2 class="titulo-medieval text-3xl mb-6 text-teal-300">
+        Mis Trabajos por Semana
+      </h2>
+
+      <!-- COMBOBOX -->
+      <div class="flex justify-center mb-10">
+        <select id="selectorSemanas" class="bg-black text-white border border-teal-500 rounded px-4 py-2">
+          <option value="">-- Selecciona una semana --</option>
+          <option value="semana1.html">Semana 1</option>
+          <option value="semana2.html">Semana 2</option>
+          <option value="semana3.html">Semana 3</option>
+          <option value="semanas/semana4.html">Semana 4</option>
+          <option value="semanas/semana5.html">Semana 5</option>
+          <option value="semanas/semana6.html">Semana 6</option>
+          <option value="semanas/semana7.html">Semana 7</option>
+          <option value="semanas/semana8.html">Semana 8</option>
+          <option value="semanas/semana9.html">Semana 9</option>
+          <option value="semanas/semana10.html">Semana 10</option>
+          <option value="semanas/semana11.html">Semana 11</option>
+          <option value="semanas/semana12.html">Semana 12</option>
+          <option value="semanas/semana13.html">Semana 13</option>
+          <option value="semanas/semana14.html">Semana 14</option>
+          <option value="semanas/semana15.html">Semana 15</option>
+          <option value="semanas/semana16.html">Semana 16</option>
+        </select>
+      </div>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-teal-900 text-center text-teal-200 py-10 mt-10 w-full">
+    <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+  </footer>
+
+  <!-- SCRIPT PARA REDIRECCIÓN -->
+  <script>
+    // Espera a que el DOM esté listo y luego conecta el evento
+    document.addEventListener('DOMContentLoaded', function () {
+      const selector = document.getElementById('selectorSemanas');
+      if (!selector) return; // si por alguna razón no existe, salimos sin error
+      selector.addEventListener('change', function () {
+        const url = this.value;
+        if (url) window.location.href = url;
+      });
+    });
+  </script>
+
+</body>
+</html>
