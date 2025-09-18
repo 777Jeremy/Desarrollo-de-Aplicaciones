@@ -12,13 +12,89 @@
     .titulo-medieval {
       font-family: 'UnifrakturCook', cursive;
     }
+
+    /* Fondo animado con partículas */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: mover 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes mover {
+      from { background-position: 0 0; }
+      to { background-position: 40px 40px; }
+    }
+
+    /* Título con animación de brillo */
+    .titulo-medieval {
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
+    }
+
+    @keyframes brillo {
+      to { background-position: 300% center; }
+    }
+
+    /* Aparición suave */
+    .fade-in {
+      animation: aparecer 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Estilo personalizado para el combobox */
+    .combo-personalizado {
+      background-color: rgba(14, 80, 72, 0.911);
+      color: white;
+    }
+
+    .combo-personalizado option {
+      background-color: rgba(14, 80, 72, 0.95);
+      color: white;
+    }
+
+    /* Fácil cambio de color de encabezado y pie */
+    header {
+      background: linear-gradient(90deg, #022523, #022523);
+    }
+
+    footer {
+      background-color: #052523;
+    }
+
+    /* VIDEO O GIF CENTRADO Y DIFUMINADO */
+    .video-centro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 400px;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      opacity: 0.2;
+      filter: blur(10px);
+      z-index: 1;
+      pointer-events: none;
+    }
   </style>
 </head>
-<body class="bg-black text-gray-100 min-h-screen flex flex-col">
+
+<body class="bg-black text-gray-100 min-h-screen flex flex-col relative overflow-hidden">
 
   <!-- ENCABEZADO -->
-  <header class="bg-teal-700 text-white py-10 shadow-md">
-    <h1 class="titulo-medieval text-5xl font-bold text-center text-black drop-shadow-lg">
+  <header class="relative text-white py-10 shadow-xl z-30">
+    <h1 class="titulo-medieval text-5xl font-bold text-center drop-shadow-xl hover:scale-105 transition-transform duration-500">
       Desarrollo de Aplicaciones
     </h1>
     <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
@@ -27,78 +103,59 @@
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="flex-1 flex items-center justify-center bg-gray-900 relative overflow-hidden">
+  <main class="flex-1 flex items-center justify-center relative overflow-hidden">
 
-    <!-- IMAGEN IZQUIERDA CON DEGRADADO -->
-    <div class="absolute inset-y-0 left-0 w-1/2">
-      <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-transparent z-10"></div>
-      <img src="1.png" alt="Imagen izquierda"
-           class="h-full w-full object-cover opacity-50">
-    </div>
+    <!-- VIDEO / GIF DE FONDO CENTRADO -->
+    <video autoplay muted loop playsinline class="video-centro">
+      <source src="video.mp4" type="video-centro">
+      <!-- Si prefieres un GIF, usa: <img src="fondo.gif" class="video-centro" alt=""> -->
+    </video>
 
-    <!-- IMAGEN DERECHA CON DEGRADADO -->
-    <div class="absolute inset-y-0 right-0 w-1/2">
-      <div class="absolute inset-0 bg-gradient-to-l from-gray-900 via-transparent to-transparent z-10"></div>
-      <img src="2.png" alt="Imagen derecha"
-           class="h-full w-full object-cover opacity-50">
-    </div>
-
-    <!-- CONTENIDO CENTRADO (TÍTULO Y COMBOBOX) -->
-    <div class="relative z-20 text-center">
-      <h2 class="titulo-medieval text-3xl mb-6 text-teal-300">
+    <!-- CONTENIDO CENTRADO -->
+    <div class="relative z-20 text-center fade-in">
+      <h2 class="titulo-medieval text-3xl mb-6 text-teal-300 drop-shadow-md">
         Mis Trabajos por Semana
       </h2>
 
       <!-- COMBOBOX -->
-<div class="flex justify-center mb-10">
-    <select id="selectorSemanas" class="bg-black text-white border border-teal-500 rounded px-4 py-2">
-      <option value="">-- Selecciona una semana --</option>
-      <option value="semana1.html">Semana 1</option>
-      <option value="semana2.html">Semana 2</option>
-      <option value="semana3.html">Semana 3</option>
-      <option value="semanas/semana4.html">Semana 4</option>
-      <option value="semanas/semana5.html">Semana 5</option>
-      <option value="semanas/semana6.html">Semana 6</option>
-      <option value="semanas/semana7.html">Semana 7</option>
-      <option value="semanas/semana8.html">Semana 8</option>
-      <option value="semanas/semana9.html">Semana 9</option>
-      <option value="semanas/semana10.html">Semana 10</option>
-      <option value="semanas/semana11.html">Semana 11</option>
-      <option value="semanas/semana12.html">Semana 12</option>
-      <option value="semanas/semana13.html">Semana 13</option>
-      <option value="semanas/semana14.html">Semana 14</option>
-      <option value="semanas/semana15.html">Semana 15</option>
-      <option value="semanas/semana16.html">Semana 16</option>
-    </select>
-  </div>
+      <div class="flex justify-center mb-10">
+        <select id="selectorSemanas"
+          class="combo-personalizado border border-teal-400 rounded-xl px-6 py-3 
+                 shadow-lg hover:shadow-teal-500/30 hover:scale-105 transition-all duration-300 
+                 focus:outline-none focus:ring-2 focus:ring-teal-400">
+          <option value="">-- Selecciona una semana --</option>
+          <option value="semana1.html">Semana 1</option>
+          <option value="semana2.html">Semana 2</option>
+          <option value="semana3.html">Semana 3</option>
+          <option value="semanas/semana4.html">Semana 4</option>
+          <option value="semanas/semana5.html">Semana 5</option>
+          <option value="semanas/semana6.html">Semana 6</option>
+          <option value="semanas/semana7.html">Semana 7</option>
+          <option value="semanas/semana8.html">Semana 8</option>
+          <option value="semanas/semana9.html">Semana 9</option>
+          <option value="semanas/semana10.html">Semana 10</option>
+          <option value="semanas/semana11.html">Semana 11</option>
+          <option value="semanas/semana12.html">Semana 12</option>
+          <option value="semanas/semana13.html">Semana 13</option>
+          <option value="semanas/semana14.html">Semana 14</option>
+          <option value="semanas/semana15.html">Semana 15</option>
+          <option value="semanas/semana16.html">Semana 16</option>
+        </select>
+      </div>
     </div>
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <footer class="bg-teal-900 text-center text-teal-200 py-10 mt-10 w-full">
+  <footer class="text-center text-teal-200 py-8 mt-10 w-full z-30">
     <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
     <p>Universidad Peruana Los Andes</p>  
   </footer>
 
   <!-- SCRIPT PARA REDIRECCIÓN -->
   <script>
-    // Espera a que el DOM esté listo y luego conecta el evento
-    document.addEventListener('DOMContentLoaded', function () {
-      const selector = document.getElementById('selectorSemanas');
-      if (!selector) return; // si por alguna razón no existe, salimos sin error
-      selector.addEventListener('change', function () {
-        const url = this.value;
-        if (url) window.location.href = url;
-      });
-    });
-  </script>
-  <!-- SCRIPT para redirigir -->
-<script>
     document.getElementById('selectorSemanas').addEventListener('change', function() {
       const url = this.value;
-      if (url) {
-        window.location.href = url;
-      }
+      if (url) window.location.href = url;
     });
   </script>
 
