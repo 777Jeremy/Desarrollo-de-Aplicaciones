@@ -13,23 +13,41 @@
       font-family: 'UnifrakturCook', cursive;
     }
 
-    /* Fondo animado con partículas */
+    /* Fondo con imagen + partículas de destellos suaves */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px);
-      background-size: 40px 40px;
-      animation: mover 10s linear infinite;
       z-index: 0;
+
+      background:
+        /* Capa de partículas */
+        radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
+        /* Imagen de fondo */
+        url("ff.jpg") center/cover no-repeat;
+
+      background-size:
+        40px 40px,         /* tamaño del patrón de partículas */
+        cover;             /* imagen cubre toda la pantalla */
+
+      animation:
+        mover 10s linear infinite,          /* mueve las partículas */
+        brilloFondo 6s ease-in-out infinite alternate; /* hace brillar suavemente */
+
+      filter: brightness(0.6); /* oscurece un poco la imagen */
     }
 
     @keyframes mover {
-      from { background-position: 0 0; }
-      to { background-position: 40px 40px; }
+      from { background-position: 0 0, center; }
+      to { background-position: 40px 40px, center; }
     }
 
-    /* Título con animación de brillo */
+    @keyframes brilloFondo {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
+    }
+
+    /* Título con brillo verde metálico animado */
     .titulo-medieval {
       background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
       background-size: 300% auto;
@@ -42,7 +60,6 @@
       to { background-position: 300% center; }
     }
 
-    /* Aparición suave */
     .fade-in {
       animation: aparecer 1s ease forwards;
       opacity: 0;
@@ -53,39 +70,61 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Estilo personalizado para el combobox */
+    /* Estilo del combobox */
     .combo-personalizado {
-      background-color: rgba(14, 80, 72, 0.911);
+      background-color: rgba(8, 53, 47, 0.95);
       color: white;
     }
-
     .combo-personalizado option {
-      background-color: rgba(14, 80, 72, 0.95);
+      background-color: rgba(8, 53, 47, 0.95);
       color: white;
     }
 
-    /* Fácil cambio de color de encabezado y pie */
+    /* Encabezado y pie */
     header {
       background: linear-gradient(90deg, #022523, #022523);
+      z-index: 30;
     }
-
     footer {
-      background-color: #052523;
+      background: linear-gradient(90deg, #052c28, #043d36);
+      z-index: 30;
+      border-top: 2px solid #0f8d74;
+      box-shadow: 0 -2px 10px rgba(15, 141, 116, 0.4);
     }
 
-    /* VIDEO O GIF CENTRADO Y DIFUMINADO */
-    .video-centro {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 600px;
-      height: 400px;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      opacity: 0.2;
-      filter: blur(10px);
-      z-index: 1;
-      pointer-events: none;
+    /* Bloque parallax mejorado */
+    .bloque-parallax {
+      position: relative;
+      height: 350px;
+      background-image: url('imagenes/tecnologia-verde.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-top: 4px solid #0f8d74;
+      border-bottom: 4px solid #0f8d74;
+      box-shadow: inset 0 0 50px rgba(0,255,200,0.15), 0 0 30px rgba(0,255,200,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+      filter: brightness(0.85) contrast(1.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .bloque-parallax.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bloque-parallax h2 {
+      font-size: 3rem;
+      color: #d9fff8;
+      text-shadow: 0 0 15px #0fffcf, 0 0 30px #0f8d74;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 30px;
+      border-radius: 15px;
     }
   </style>
 </head>
@@ -93,7 +132,7 @@
 <body class="bg-black text-gray-100 min-h-screen flex flex-col relative overflow-hidden">
 
   <!-- ENCABEZADO -->
-  <header class="relative text-white py-10 shadow-xl z-30">
+  <header class="relative text-white py-10 shadow-xl">
     <h1 class="titulo-medieval text-5xl font-bold text-center drop-shadow-xl hover:scale-105 transition-transform duration-500">
       Desarrollo de Aplicaciones
     </h1>
@@ -105,14 +144,8 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main class="flex-1 flex items-center justify-center relative overflow-hidden">
 
-    <!-- VIDEO / GIF DE FONDO CENTRADO -->
-    <video autoplay muted loop playsinline class="video-centro">
-      <source src="video.mp4" type="video-centro">
-      <!-- Si prefieres un GIF, usa: <img src="fondo.gif" class="video-centro" alt=""> -->
-    </video>
-
-    <!-- CONTENIDO CENTRADO -->
-    <div class="relative z-20 text-center fade-in">
+    <!-- CONTENIDO -->
+    <div class="relative z-10 text-center fade-in">
       <h2 class="titulo-medieval text-3xl mb-6 text-teal-300 drop-shadow-md">
         Mis Trabajos por Semana
       </h2>
@@ -146,12 +179,11 @@
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <footer class="text-center text-teal-200 py-8 mt-10 w-full z-30">
+  <footer class="text-center text-teal-200 py-8 mt-16 w-full">
     <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
-    <p>Universidad Peruana Los Andes</p>  
+    <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>  
   </footer>
 
-  <!-- SCRIPT PARA REDIRECCIÓN -->
   <script>
     document.getElementById('selectorSemanas').addEventListener('change', function() {
       const url = this.value;
