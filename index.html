@@ -9,8 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 
   <style>
+    /* Título medieval con fuente y animación */
     .titulo-medieval {
       font-family: 'UnifrakturCook', cursive;
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
     }
 
     /* Fondo con imagen + partículas de destellos suaves */
@@ -43,14 +49,6 @@
     @keyframes brilloFondo {
       0% { opacity: 0.3; }
       100% { opacity: 0.6; }
-    }
-
-    .titulo-medieval {
-      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
-      background-size: 300% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: brillo 5s linear infinite;
     }
 
     @keyframes brillo {
