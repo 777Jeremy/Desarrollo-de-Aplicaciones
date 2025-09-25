@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Semanas - Desarrollo de Aplicaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente medieval -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    .titulo-medieval {
+      font-family: 'UnifrakturCook', cursive;
+    }
+
+    /* Fondo con partículas y la misma estética */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+
+      background:
+        radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
+        url("FONFO.jpg") center/cover no-repeat;
+
+      background-size: 40px 40px, cover;
+      animation:
+        mover 10s linear infinite,
+        brilloFondo 6s ease-in-out infinite alternate;
+      filter: brightness(0.6);
+    }
+
+    @keyframes mover {
+      from { background-position: 0 0, center; }
+      to { background-position: 40px 40px, center; }
+    }
+
+    @keyframes brilloFondo {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
+    }
+
+    /* Títulos con brillo */
+    .titulo-medieval {
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
+    }
+
+    @keyframes brillo {
+      to { background-position: 300% center; }
+    }
+
+    /* Tarjetas */
+    .card {
+      background: rgba(4, 44, 39, 0.95);
+      border: 2px solid #0f8d74;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(15, 141, 116, 0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 0 25px rgba(15, 141, 116, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-100 min-h-screen flex flex-col relative overflow-hidden">
+
+  <!-- ENCABEZADO -->
+  <header class="relative text-white py-8 shadow-xl">
+    <h1 class="titulo-medieval text-4xl font-bold text-center drop-shadow-xl">
+      Selecciona tu Semana
+    </h1>
+    <p class="titulo-medieval text-center text-teal-200 text-lg mt-2 tracking-wide">
+      Jeremy Barzola Caso
+    </p>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="flex-1 flex items-center justify-center relative overflow-hidden">
+    <div class="relative z-10 w-full max-w-6xl p-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- Tarjetas de semanas -->
+        <a href="semana1.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 1</a>
+        <a href="semana2.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 2</a>
+        <a href="semana3.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 3</a>
+        <a href="semana4.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 4</a>
+        <a href="semanas/semana5.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 5</a>
+        <a href="semanas/semana6.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 6</a>
+        <a href="semanas/semana7.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 7</a>
+        <a href="semanas/semana8.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 8</a>
+        <a href="semanas/semana9.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 9</a>
+        <a href="semanas/semana10.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 10</a>
+        <a href="semanas/semana11.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 11</a>
+        <a href="semanas/semana12.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 12</a>
+        <a href="semanas/semana13.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 13</a>
+        <a href="semanas/semana14.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 14</a>
+        <a href="semanas/semana15.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 15</a>
+        <a href="semanas/semana16.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 16</a>
+
+      </div>
+      <!-- BOTÓN VOLVER -->
+      <div class="text-center mt-10">
+        <a href="index.html" class="btn-volver">👤 Volver al inicio</a>
+      </div>
+    </div>
+  </main>
+    </div>
+  </main>
+
+  <!-- PIE -->
+  <footer class="text-center text-teal-200 py-8 mt-10 w-full">
+    <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+    <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>
+  </footer>
+
+</body>
+</html>

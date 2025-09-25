@@ -21,20 +21,18 @@
       z-index: 0;
 
       background:
-        /* Capa de partículas */
         radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
-        /* Imagen de fondo */
-        url("ff.jpg") center/cover no-repeat;
+        url("FONFO.jpg") center/cover no-repeat;
 
       background-size:
-        40px 40px,         /* tamaño del patrón de partículas */
-        cover;             /* imagen cubre toda la pantalla */
+        40px 40px,
+        cover;
 
       animation:
-        mover 10s linear infinite,          /* mueve las partículas */
-        brilloFondo 6s ease-in-out infinite alternate; /* hace brillar suavemente */
+        mover 10s linear infinite,
+        brilloFondo 6s ease-in-out infinite alternate;
 
-      filter: brightness(0.6); /* oscurece un poco la imagen */
+      filter: brightness(0.6);
     }
 
     @keyframes mover {
@@ -47,7 +45,6 @@
       100% { opacity: 0.6; }
     }
 
-    /* Título con brillo verde metálico animado */
     .titulo-medieval {
       background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
       background-size: 300% auto;
@@ -70,17 +67,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Estilo del combobox */
-    .combo-personalizado {
-      background-color: rgba(8, 53, 47, 0.95);
-      color: white;
-    }
-    .combo-personalizado option {
-      background-color: rgba(8, 53, 47, 0.95);
-      color: white;
-    }
-
-    /* Encabezado y pie */
     header {
       background: linear-gradient(90deg, #022523, #022523);
       z-index: 30;
@@ -92,7 +78,6 @@
       box-shadow: 0 -2px 10px rgba(15, 141, 116, 0.4);
     }
 
-    /* Bloque parallax mejorado */
     .bloque-parallax {
       position: relative;
       height: 350px;
@@ -143,38 +128,17 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="flex-1 flex items-center justify-center relative overflow-hidden">
-
-    <!-- CONTENIDO -->
     <div class="relative z-10 text-center fade-in">
       <h2 class="titulo-medieval text-3xl mb-6 text-teal-300 drop-shadow-md">
-        Mis Trabajos por Semana
+        Bienvenido a mi portafolio
       </h2>
 
-      <!-- COMBOBOX -->
-      <div class="flex justify-center mb-10">
-        <select id="selectorSemanas"
-          class="combo-personalizado border border-teal-400 rounded-xl px-6 py-3 
-                 shadow-lg hover:shadow-teal-500/30 hover:scale-105 transition-all duration-300 
-                 focus:outline-none focus:ring-2 focus:ring-teal-400">
-          <option value="">-- Selecciona una semana --</option>
-          <option value="semana1.html">Semana 1</option>
-          <option value="semana2.html">Semana 2</option>
-          <option value="semana3.html">Semana 3</option>
-          <option value="semana4.html">Semana 4</option>
-          <option value="semanas/semana5.html">Semana 5</option>
-          <option value="semanas/semana6.html">Semana 6</option>
-          <option value="semanas/semana7.html">Semana 7</option>
-          <option value="semanas/semana8.html">Semana 8</option>
-          <option value="semanas/semana9.html">Semana 9</option>
-          <option value="semanas/semana10.html">Semana 10</option>
-          <option value="semanas/semana11.html">Semana 11</option>
-          <option value="semanas/semana12.html">Semana 12</option>
-          <option value="semanas/semana13.html">Semana 13</option>
-          <option value="semanas/semana14.html">Semana 14</option>
-          <option value="semanas/semana15.html">Semana 15</option>
-          <option value="semanas/semana16.html">Semana 16</option>
-        </select>
-      </div>
+      <!-- BOTÓN INICIAR -->
+      <a href="semanas.html"
+         class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-4 rounded-2xl shadow-lg 
+                hover:shadow-teal-400/50 hover:scale-110 transition-all duration-500 text-xl">
+        👾 Iniciar
+      </a>
     </div>
   </main>
 
@@ -183,13 +147,6 @@
     <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
     <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>  
   </footer>
-
-  <script>
-    document.getElementById('selectorSemanas').addEventListener('change', function() {
-      const url = this.value;
-      if (url) window.location.href = url;
-    });
-  </script>
 
 </body>
 </html>

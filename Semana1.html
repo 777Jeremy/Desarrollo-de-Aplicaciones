@@ -12,13 +12,26 @@
     .titulo-medieval {
       font-family: 'UnifrakturCook', cursive;
     }
+
+    /* ANIMACIÓN DEL ENCABEZADO (igual que inicio) */
+    .titulo-animado {
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
+    }
+
+    @keyframes brillo {
+      to { background-position: 300% center; }
+    }
   </style>
 </head>
 <body class="bg-black text-gray-100">
 
   <!-- ENCABEZADO -->
-  <header class="bg-teal-700 text-white py-10 shadow-md">
-    <h1 class="titulo-medieval text-5xl font-bold text-center text-black drop-shadow-lg">
+  <header class="py-10 shadow-md" style="background-color:#03332df8;">
+    <h1 class="titulo-medieval titulo-animado text-5xl font-bold text-center drop-shadow-lg">
       Semana 1
     </h1>
     <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
@@ -31,38 +44,75 @@
 
     <!-- TRABAJO 1 -->
     <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
-      <h2 class="titulo-medieval text-3xl text-teal-300 mb-4 text-center">Trabajo 1: Investigación sobre el Ciclo de Vida del Software</h2>
-      <p class="text-lg text-gray-300 text-justify mb-6">
-        En este trabajo investigamos las diferentes fases que componen el ciclo de vida del desarrollo de software: análisis, diseño, desarrollo, pruebas, implementación y mantenimiento. Comprendimos la importancia de planificar correctamente cada etapa para asegurar la calidad del producto final.
-      </p>
-      <img src="img/trabajo1.jpg" alt="Ciclo de vida del software" class="mx-auto rounded-xl shadow-md border border-teal-700">
-      <a href="https://github.com/777Jeremy/Ejercicios_Semana_1.git" target="_blank"
-      class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
-     💻 Ver mi GitHub
-   </a>
-   
+      <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
+        Enunciado 1:
+      </h2>
+
+      <!-- NUEVA INFORMACIÓN: Enunciado 01 -->
+      <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
+        <p class="text-gray-300 text-justify leading-relaxed">
+          Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento, por temporada de verano, denominado 7% + 7%. Los cálculos se efectúan de la siguiente manera:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>El importe de la compra es igual al producto del precio de la camisa por la cantidad de unidades adquiridas.</li>
+          <li>El importe del primer descuento es igual al 7% del importe de la compra.</li>
+          <li>El importe del segundo descuento es igual al 7% de lo que queda de restar el importe de la compra menos el importe del primer descuento.</li>
+          <li>El importe del descuento total es igual a la suma de los dos descuentos anteriores.</li>
+          <li>El importe por pagar es igual al importe de la compra menos el importe del descuento total.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- TRABAJO 2 -->
     <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
-      <h2 class="titulo-medieval text-3xl text-teal-300 mb-4 text-center">Trabajo 2: Herramientas de Desarrollo</h2>
-      <p class="text-lg text-gray-300 text-justify mb-6">
-        Este trabajo consistió en una presentación de las principales herramientas utilizadas en el desarrollo de software, como entornos de desarrollo (IDE), sistemas de control de versiones y gestores de proyectos. Aprendimos cómo cada herramienta facilita el trabajo colaborativo y ordenado entre los desarrolladores.
-      </p>
-      <img src="img/trabajo2.jpg" alt="Herramientas de desarrollo" class="mx-auto rounded-xl shadow-md border border-teal-700">
+      <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
+        Enunciado 2:
+      </h2>
+
+      <!-- NUEVA INFORMACIÓN: Enunciado 02 -->
+      <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
+        <p class="text-gray-300 text-justify leading-relaxed">
+          Una empresa expondrá sus productos en una feria. La empresa considera que el monto total de dinero a invertir estará distribuido de la siguiente manera:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Alquiler de espacio en la feria: 23%</li>
+          <li>Publicidad: 7%</li>
+          <li>Transporte: 26%</li>
+          <li>Servicios feriales: 12%</li>
+          <li>Decoración: 21%</li>
+          <li>Gastos varios: 11%</li>
+        </ul>
+        <p class="text-gray-300 text-justify leading-relaxed mt-3">
+          Dado el monto total de dinero a invertir, diseñe un programa que determine cuánto gastará la empresa en cada rubro.
+        </p>
+      </div>
     </section>
 
+    <!-- BOTONES DESCARGA Y GITHUB -->
+    <div class="flex justify-center gap-6 mt-10">
+      <a href="Git_Github.pdf" download
+         class="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+        📄 Descargar PDF
+      </a>
+
+      <a href="https://github.com/777Jeremy/Ejercicios_Semana_1.git" target="_blank"
+         class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-5 py-3 rounded-lg shadow-md border border-teal-400 transition duration-300">
+        💻 GitHub
+      </a>
+    </div>
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <div class="bg-teal-900 text-center py-4 mt-10">
+  <div class="text-center py-4 mt-10" style="background-color:#03332df8;">
     <p class="text-sm text-teal-200">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+    <p>Universidad Peruana Los Andes</p>  
   </div>
+  
   <!-- BOTÓN VOLVER -->
   <div class="absolute top-6 right-6">
-    <a href="../index.html"
+    <a href="semanas.html"
        class="titulo-medieval bg-black hover:bg-gray-800 text-white text-lg px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
-      ⬅ Volver al Inicio
+      🦎 Volver a Semanas
     </a>
   </div>
 
