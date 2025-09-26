@@ -70,15 +70,24 @@
 </head>
 <body class="bg-black text-gray-100 min-h-screen flex flex-col relative overflow-hidden">
 
-  <!-- ENCABEZADO -->
-  <header class="relative text-white py-8 shadow-xl">
+<!-- ENCABEZADO -->
+<header class="relative text-white py-8 shadow-xl flex items-center justify-center">
+  <!-- LOGO UNIVERSIDAD -->
+  <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
+    <img src="LOGO.png" alt="Logo Universidad" class="h-16 w-auto">
+  </div>
+
+  <!-- TÍTULO Y NOMBRE AL CENTRO -->
+  <div class="text-center">
     <h1 class="titulo-medieval text-4xl font-bold text-center drop-shadow-xl">
       Selecciona tu Semana
     </h1>
     <p class="titulo-medieval text-center text-teal-200 text-lg mt-2 tracking-wide">
       Jeremy Barzola Caso
     </p>
-  </header>
+  </div>
+</header>
+
 
   <!-- CONTENIDO -->
   <main class="flex-1 flex items-center justify-center relative overflow-hidden">
@@ -104,14 +113,15 @@
         <a href="semanas/semana16.html" class="card p-6 text-center text-teal-200 font-bold text-xl hover:text-white">Semana 16</a>
 
       </div>
-      <!-- BOTÓN VOLVER -->
-      <div class="text-center mt-10">
-        <a href="index.html" class="btn-volver">👤 Volver al inicio</a>
-      </div>
-    </div>
-  </main>
-    </div>
-  </main>
+<!-- BOTÓN VOLVER -->
+<div class="text-center mt-10">
+  <a href="index.html"
+     class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-4 rounded-2xl shadow-lg 
+            hover:shadow-teal-400/50 hover:scale-110 transition-all duration-500 text-xl inline-block animate-bounce">
+    👤 Volver al inicio
+  </a>
+</div>
+
 
   <!-- PIE -->
   <footer class="text-center text-teal-200 py-8 mt-10 w-full">

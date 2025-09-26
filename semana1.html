@@ -13,7 +13,7 @@
       font-family: 'UnifrakturCook', cursive;
     }
 
-    /* ANIMACIÓN DEL ENCABEZADO (igual que inicio) */
+    /* ANIMACIÓN DEL ENCABEZADO */
     .titulo-animado {
       background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
       background-size: 300% auto;
@@ -27,20 +27,38 @@
     }
   </style>
 </head>
-<body class="bg-black text-gray-100">
+<body class="bg-black text-gray-100 relative flex flex-col min-h-screen">
 
   <!-- ENCABEZADO -->
-  <header class="py-10 shadow-md" style="background-color:#03332df8;">
-    <h1 class="titulo-medieval titulo-animado text-5xl font-bold text-center drop-shadow-lg">
-      Semana 1
-    </h1>
-    <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
-      Desarrollo de Aplicaciones - Jeremy Barzola Caso
-    </p>
+  <header class="py-10 shadow-md flex items-center justify-center relative" style="background-color:#03332df8;">
+    <!-- LOGO UNIVERSIDAD -->
+    <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
+      <img src="LOGO.png" alt="Logo Universidad" class="h-16 w-auto">
+    </div>
+
+    <div class="text-center">
+      <h1 class="titulo-medieval titulo-animado text-5xl font-bold drop-shadow-lg">
+        Semana 1
+      </h1>
+      <p class="titulo-medieval text-teal-100 text-2xl mt-2 tracking-wide">
+        Desarrollo de Aplicaciones - Jeremy Barzola Caso
+      </p>
+    </div>
+
+    <!-- BOTÓN VOLVER -->
+    <div class="absolute right-6 top-1/2 transform -translate-y-1/2">
+      <a href="semanas.html"
+         class="titulo-medieval text-white text-lg px-5 py-2 rounded-lg border border-teal-400
+                bg-gradient-to-r from-teal-600 to-teal-400 shadow-lg
+                hover:from-teal-400 hover:to-teal-600 hover:shadow-teal-300/70
+                hover:scale-110 transition-all duration-500 animate-pulse inline-block">
+        🦎 Volver a Semanas
+      </a>
+    </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="container mx-auto px-6 py-12">
+  <main class="container mx-auto px-6 py-12 flex-1">
 
     <!-- TRABAJO 1 -->
     <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
@@ -48,7 +66,6 @@
         Enunciado 1:
       </h2>
 
-      <!-- NUEVA INFORMACIÓN: Enunciado 01 -->
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300 text-justify leading-relaxed">
           Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento, por temporada de verano, denominado 7% + 7%. Los cálculos se efectúan de la siguiente manera:
@@ -69,7 +86,6 @@
         Enunciado 2:
       </h2>
 
-      <!-- NUEVA INFORMACIÓN: Enunciado 02 -->
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300 text-justify leading-relaxed">
           Una empresa expondrá sus productos en una feria. La empresa considera que el monto total de dinero a invertir estará distribuido de la siguiente manera:
@@ -91,30 +107,27 @@
     <!-- BOTONES DESCARGA Y GITHUB -->
     <div class="flex justify-center gap-6 mt-10">
       <a href="Git_Github.pdf" download
-         class="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+         class="bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg
+                hover:bg-gradient-to-r hover:from-red-600 hover:to-red-400
+                hover:shadow-red-400/70 hover:scale-105 transition-all duration-500 animate-pulse">
         📄 Descargar PDF
       </a>
 
       <a href="https://github.com/777Jeremy/Ejercicios_Semana_1.git" target="_blank"
-         class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-5 py-3 rounded-lg shadow-md border border-teal-400 transition duration-300">
+         class="bg-gray-800 text-white font-semibold px-5 py-3 rounded-lg shadow-md border border-teal-400
+                hover:bg-gradient-to-r hover:from-teal-600 hover:to-teal-400
+                hover:shadow-teal-400/70 hover:scale-105 transition-all duration-500 animate-pulse">
         💻 GitHub
       </a>
     </div>
+
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <div class="text-center py-4 mt-10" style="background-color:#03332df8;">
-    <p class="text-sm text-teal-200">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+  <footer class="w-full bg-gradient-to-r from-teal-800 to-teal-900 text-center text-teal-200 py-6 mt-auto">
+    <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
     <p>Universidad Peruana Los Andes</p>  
-  </div>
-  
-  <!-- BOTÓN VOLVER -->
-  <div class="absolute top-6 right-6">
-    <a href="semanas.html"
-       class="titulo-medieval bg-black hover:bg-gray-800 text-white text-lg px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
-      🦎 Volver a Semanas
-    </a>
-  </div>
+  </footer>
 
 </body>
 </html>
