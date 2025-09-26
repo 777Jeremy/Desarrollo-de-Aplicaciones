@@ -12,13 +12,26 @@
     .titulo-medieval {
       font-family: 'UnifrakturCook', cursive;
     }
+
+    /* ANIMACIÓN DEL ENCABEZADO */
+    .titulo-animado {
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
+    }
+
+    @keyframes brillo {
+      to { background-position: 300% center; }
+    }
   </style>
 </head>
 <body class="bg-black text-gray-100">
 
   <!-- ENCABEZADO -->
-  <header class="bg-teal-700 text-white py-10 shadow-md">
-    <h1 class="titulo-medieval text-5xl font-bold text-center text-black drop-shadow-lg">
+  <header class="py-10 shadow-md" style="background-color:#03332df8;">
+    <h1 class="titulo-medieval titulo-animado text-5xl font-bold text-center drop-shadow-lg">
       Semana 2
     </h1>
     <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
@@ -29,72 +42,88 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main class="container mx-auto px-6 py-12">
 
-<!-- TRABAJO 1 -->
-<section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
-  <h2 class="titulo-medieval text-3xl text-teal-300 mb-4 text-center">
-    Enunciado 1:
-  </h2>
+    <!-- TRABAJO 1 -->
+    <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
+      <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
+        Enunciado 1:
+      </h2>
 
-  <!-- NUEVA INFORMACIÓN: Actividad 01 -->
-  <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
-    <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
-      <p> Una tienda ha puesto en oferta la venta de un producto ofreciendo un porcentaje de descuento 
-        sobre el importe de la compra de acuerdo con la siguiente tabla:</p>
-      <p>Docenas adquiridas y Descuentos:</p>
-      <li>Si adquiere 10 docenas o más → 20% de descuento.</li>
-      <li>Si adquiere menos de 10 docenas → 10% de descuento.</li>
-    </ul>
-      <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
-        <p>Adicionalmente, la tienda obsequia lapiceros de acuerdo con a la siguiente tabla:</p>
-        <li>Si el importe a pagar es mayor o igual a 200 → 2 lapiceros por cada docena.</li>
-        <li>Si el importe a pagar es menor a 200 → 0 lapiceros.</li>
-        <p>Dado el precio de la docena y la cantidad de docenas adquiridas, diseñe un programa que
+      <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
+        <p class="text-gray-300 text-justify leading-relaxed">
+          Una tienda ha puesto en oferta la venta de un producto ofreciendo un porcentaje de descuento 
+          sobre el importe de la compra de acuerdo con la siguiente tabla:
+        </p>
+        <p class="text-gray-300 mt-3">Docenas adquiridas y Descuentos:</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Si adquiere 10 docenas o más → 20% de descuento.</li>
+          <li>Si adquiere menos de 10 docenas → 10% de descuento.</li>
+        </ul>
+
+        <p class="text-gray-300 mt-4">Adicionalmente, la tienda obsequia lapiceros de acuerdo con la siguiente tabla:</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Si el importe a pagar es mayor o igual a 200 → 2 lapiceros por cada docena.</li>
+          <li>Si el importe a pagar es menor a 200 → 0 lapiceros.</li>
+        </ul>
+
+        <p class="text-gray-300 mt-4">
+          Dado el precio de la docena y la cantidad de docenas adquiridas, diseñe un programa que
           determine el importe de la compra, el importe del descuento, el importe a pagar y la cantidad de
-          lapiceros de obsequio.</p>
-  </div>
+          lapiceros de obsequio.
+        </p>
+      </div>
+    </section>
 
-<!-- TRABAJO 2 -->
-<section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
-  <h2 class="titulo-medieval text-3xl text-teal-300 mb-4 text-center">
-    Enunciado 2:
-  </h2>
+    <!-- TRABAJO 2 -->
+    <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
+      <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
+        Enunciado 2:
+      </h2>
 
-  <!-- NUEVA INFORMACIÓN: Actividad 02 -->
-  <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
-    <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
-      <p>El sueldo bruto de los empleados de una empresa se calcula sumando el sueldo básico más la bonificación por hijos.</p>
-      <p>El sueldo básico se calcula multiplicando las horas trabajadas por la tarifa horaria, de acuerdo con la siguiente tabla:</p>
-      <li>Categoría A → S/. 45.0 por hora</li>
-      <li>Categoría B → S/. 37.5 por hora</li>
-    </ul>
-    <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
-      <p>La bonificación por hijos se calcula de acuerdo con la siguiente tabla:</p>
-      <li>Hasta 3 hijos → S/. 40.5 por cada hijo</li>
-      <li>Más de 3 hijos → S/. 35.0 por cada hijo</li>
-      <p>Por ley, todo empleado está sujeto a un porcentaje de descuento sobre el sueldo bruto de acuerdo con la normativa establecida.</p>
-    </ul>
-  </div>
+      <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
+        <p class="text-gray-300">
+          El sueldo bruto de los empleados de una empresa se calcula sumando el sueldo básico más la bonificación por hijos.
+        </p>
+        <p class="text-gray-300 mt-3">
+          El sueldo básico se calcula multiplicando las horas trabajadas por la tarifa horaria, de acuerdo con la siguiente tabla:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Categoría A → S/. 45.0 por hora</li>
+          <li>Categoría B → S/. 37.5 por hora</li>
+        </ul>
 
-     <!-- BOTÓN GENERAL DE GITHUB -->
-<div class="text-center mt-10">
-    <a href="https://github.com/777Jeremy/Ejercicios_Semana_2.git" target="_blank"
-       class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
-      💻 GitHub
-    </a>
-  </div>
-  
+        <p class="text-gray-300 mt-4">La bonificación por hijos se calcula de acuerdo con la siguiente tabla:</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Hasta 3 hijos → S/. 40.5 por cada hijo</li>
+          <li>Más de 3 hijos → S/. 35.0 por cada hijo</li>
+        </ul>
+
+        <p class="text-gray-300 mt-4">
+          Por ley, todo empleado está sujeto a un porcentaje de descuento sobre el sueldo bruto de acuerdo con la normativa establecida.
+        </p>
+      </div>
+    </section>
+
+    <!-- BOTÓN GENERAL DE GITHUB -->
+    <div class="text-center mt-10">
+      <a href="https://github.com/777Jeremy/Ejercicios_Semana_2.git" target="_blank"
+         class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
+        💻 GitHub
+      </a>
+    </div>
+
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <div class="bg-teal-900 text-center py-4 mt-10">
+  <div class="text-center py-4 mt-10" style="background-color:#03332df8;">
     <p class="text-sm text-teal-200">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
     <p>Universidad Peruana Los Andes</p>  
   </div>
+
   <!-- BOTÓN VOLVER -->
   <div class="absolute top-6 right-6">
-    <a href="index.html"
+    <a href="semanas.html"
        class="titulo-medieval bg-black hover:bg-gray-800 text-white text-lg px-5 py-2 rounded-lg shadow-md border border-teal-400 transition duration-300">
-      ⬅ Volver al Inicio
+      🦎 Volver a Semanas
     </a>
   </div>
 
