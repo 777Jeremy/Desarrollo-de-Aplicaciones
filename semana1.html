@@ -13,7 +13,35 @@
       font-family: 'UnifrakturCook', cursive;
     }
 
-    /* ANIMACIÓN DEL ENCABEZADO */
+    /* Fondo con partículas e imagen */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+
+      background:
+        radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
+        url("FONFO.jpg") center/cover no-repeat;
+
+      background-size: 40px 40px, cover;
+      animation:
+        mover 10s linear infinite,
+        brilloFondo 6s ease-in-out infinite alternate;
+      filter: brightness(0.6);
+    }
+
+    @keyframes mover {
+      from { background-position: 0 0, center; }
+      to { background-position: 40px 40px, center; }
+    }
+
+    @keyframes brilloFondo {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
+    }
+
+    /* Títulos animados */
     .titulo-animado {
       background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
       background-size: 300% auto;
@@ -29,23 +57,24 @@
 </head>
 <body class="bg-black text-gray-100 relative flex flex-col min-h-screen">
 
-  <!-- ENCABEZADO -->
-  <header class="py-10 shadow-md flex items-center justify-center relative" style="background-color:#03332df8;">
-    <!-- LOGO UNIVERSIDAD -->
+  <!-- ENCABEZADO igual al de semanas -->
+  <header class="relative text-white py-8 shadow-xl flex items-center justify-center z-10">
+    <!-- Logo -->
     <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
-      <img src="LOGO.png" alt="Logo Universidad" class="h-16 w-auto">
+      <img src="LOGO.png" alt="Logo Universidad" class="h-24 w-auto">
     </div>
 
+    <!-- Título -->
     <div class="text-center">
       <h1 class="titulo-medieval titulo-animado text-5xl font-bold drop-shadow-lg">
         Semana 1
       </h1>
-      <p class="titulo-medieval text-teal-100 text-2xl mt-2 tracking-wide">
+      <p class="titulo-medieval text-teal-200 text-2xl mt-2 tracking-wide">
         Desarrollo de Aplicaciones - Jeremy Barzola Caso
       </p>
     </div>
 
-    <!-- BOTÓN VOLVER -->
+    <!-- Botón volver -->
     <div class="absolute right-6 top-1/2 transform -translate-y-1/2">
       <a href="semanas.html"
          class="titulo-medieval text-white text-lg px-5 py-2 rounded-lg border border-teal-400
@@ -58,14 +87,13 @@
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="container mx-auto px-6 py-12 flex-1">
+  <main class="container mx-auto px-6 py-12 flex-1 relative z-10">
 
     <!-- TRABAJO 1 -->
     <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
       <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
         Enunciado 1:
       </h2>
-
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300 text-justify leading-relaxed">
           Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento, por temporada de verano, denominado 7% + 7%. Los cálculos se efectúan de la siguiente manera:
@@ -85,7 +113,6 @@
       <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
         Enunciado 2:
       </h2>
-
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300 text-justify leading-relaxed">
           Una empresa expondrá sus productos en una feria. La empresa considera que el monto total de dinero a invertir estará distribuido de la siguiente manera:
@@ -104,7 +131,7 @@
       </div>
     </section>
 
-    <!-- BOTONES DESCARGA Y GITHUB -->
+    <!-- BOTONES -->
     <div class="flex justify-center gap-6 mt-10">
       <a href="GIT_GITHUB.pdf" download
          class="bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg
@@ -120,13 +147,12 @@
         💻 GitHub
       </a>
     </div>
-
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="w-full bg-gradient-to-r from-teal-800 to-teal-900 text-center text-teal-200 py-6 mt-auto">
+  <!-- PIE igual al de semanas -->
+  <footer class="text-center text-teal-200 py-8 mt-10 w-full relative z-10">
     <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
-    <p>Universidad Peruana Los Andes</p>  
+    <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>
   </footer>
 
 </body>

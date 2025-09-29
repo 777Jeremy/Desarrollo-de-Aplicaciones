@@ -13,7 +13,35 @@
       font-family: 'UnifrakturCook', cursive;
     }
 
-    /* ANIMACIÓN DEL ENCABEZADO */
+    /* Fondo con partículas e imagen (estable y oscuro) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+
+      background:
+        radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
+        url("FONFO.jpg") center/cover no-repeat;
+
+      background-size: 40px 40px, cover;
+      animation:
+        mover 10s linear infinite,
+        brilloFondo 6s ease-in-out infinite alternate;
+      filter: brightness(0.6);
+    }
+
+    @keyframes mover {
+      from { background-position: 0 0, center; }
+      to { background-position: 40px 40px, center; }
+    }
+
+    @keyframes brilloFondo {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
+    }
+
+    /* Títulos animados */
     .titulo-animado {
       background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
       background-size: 300% auto;
@@ -27,33 +55,45 @@
     }
   </style>
 </head>
-<body class="bg-black text-gray-100">
+<body class="bg-black text-gray-100 relative flex flex-col min-h-screen">
 
-   <!-- ENCABEZADO -->
-   <header class="py-10 shadow-md flex items-center justify-center relative" style="background-color:#03332df8;">
-    <!-- LOGO UNIVERSIDAD -->
+  <!-- ENCABEZADO -->
+  <header class="relative text-white py-8 shadow-xl flex items-center justify-center z-10">
+    <!-- Logo -->
     <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
-      <img src="LOGO.png" alt="Logo Universidad" class="h-16 w-auto">
+      <img src="LOGO.png" alt="Logo Universidad" class="h-24 w-auto">
     </div>
 
+    <!-- Título -->
     <div class="text-center">
-      <h1 class="titulo-medieval titulo-animado text-5xl font-bold text-center drop-shadow-lg">
+      <h1 class="titulo-medieval titulo-animado text-5xl font-bold drop-shadow-lg">
         Semana 2
       </h1>
-      <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
+      <p class="titulo-medieval text-teal-200 text-2xl mt-2 tracking-wide">
         Desarrollo de Aplicaciones - Jeremy Barzola Caso
       </p>
     </div>
+
+    <!-- Botón volver -->
+    <div class="absolute right-6 top-1/2 transform -translate-y-1/2">
+      <a href="semanas.html"
+         class="titulo-medieval text-white text-lg px-5 py-2 rounded-lg border border-teal-400
+                bg-gradient-to-r from-teal-600 to-teal-400 shadow-lg
+                hover:from-teal-400 hover:to-teal-600 hover:shadow-teal-300/70
+                hover:scale-110 transition-all duration-500 animate-pulse inline-block">
+        🦎 Volver a Semanas
+      </a>
+    </div>
   </header>
+
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="container mx-auto px-6 py-12">
+  <main class="container mx-auto px-6 py-12 flex-1 relative z-10">
 
     <!-- TRABAJO 1 -->
     <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
       <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
         Enunciado 1:
       </h2>
-
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300 text-justify leading-relaxed">
           Una tienda ha puesto en oferta la venta de un producto ofreciendo un porcentaje de descuento 
@@ -64,13 +104,11 @@
           <li>Si adquiere 10 docenas o más → 20% de descuento.</li>
           <li>Si adquiere menos de 10 docenas → 10% de descuento.</li>
         </ul>
-
         <p class="text-gray-300 mt-4">Adicionalmente, la tienda obsequia lapiceros de acuerdo con la siguiente tabla:</p>
         <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
           <li>Si el importe a pagar es mayor o igual a 200 → 2 lapiceros por cada docena.</li>
           <li>Si el importe a pagar es menor a 200 → 0 lapiceros.</li>
         </ul>
-
         <p class="text-gray-300 mt-4">
           Dado el precio de la docena y la cantidad de docenas adquiridas, diseñe un programa que
           determine el importe de la compra, el importe del descuento, el importe a pagar y la cantidad de
@@ -84,7 +122,6 @@
       <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
         Enunciado 2:
       </h2>
-
       <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
         <p class="text-gray-300">
           El sueldo bruto de los empleados de una empresa se calcula sumando el sueldo básico más la bonificación por hijos.
@@ -96,49 +133,33 @@
           <li>Categoría A → S/. 45.0 por hora</li>
           <li>Categoría B → S/. 37.5 por hora</li>
         </ul>
-
         <p class="text-gray-300 mt-4">La bonificación por hijos se calcula de acuerdo con la siguiente tabla:</p>
         <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
           <li>Hasta 3 hijos → S/. 40.5 por cada hijo</li>
           <li>Más de 3 hijos → S/. 35.0 por cada hijo</li>
         </ul>
-
         <p class="text-gray-300 mt-4">
           Por ley, todo empleado está sujeto a un porcentaje de descuento sobre el sueldo bruto de acuerdo con la normativa establecida.
         </p>
       </div>
     </section>
 
- <!-- BOTÓN GENERAL DE GITHUB -->
-<div class="text-center mt-10">
-  <a href="https://github.com/777Jeremy/Ejercicios_Semana_2.git" target="_blank"
-     class="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg shadow-md border border-teal-400
-            hover:bg-gradient-to-r hover:from-teal-600 hover:to-teal-400
-            hover:shadow-teal-400/70 hover:scale-110
-            transition-all duration-500 animate-pulse">
-    💻 GitHub
-  </a>
-</div>
-
-
+    <!-- BOTÓN GITHUB -->
+    <div class="text-center mt-10">
+      <a href="https://github.com/777Jeremy/Ejercicios_Semana_2.git" target="_blank"
+         class="bg-gray-800 text-white font-semibold px-5 py-3 rounded-lg shadow-md border border-teal-400
+                hover:bg-gradient-to-r hover:from-teal-600 hover:to-teal-400
+                hover:shadow-teal-400/70 hover:scale-105 transition-all duration-500 animate-pulse">
+        💻 GitHub
+      </a>
+    </div>
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <div class="text-center py-4 mt-10" style="background-color:#03332df8;">
-    <p class="text-sm text-teal-200">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
-    <p>Universidad Peruana Los Andes</p>  
-  </div>
-
- <!-- BOTÓN VOLVER -->
-<div class="absolute right-6 top-6">
-  <a href="semanas.html"
-     class="titulo-medieval text-white text-lg px-5 py-2 rounded-lg border border-teal-400
-            bg-gradient-to-r from-teal-600 to-teal-400 shadow-lg
-            hover:from-teal-400 hover:to-teal-600 hover:shadow-teal-300/70
-            hover:scale-110 transition-all duration-500 animate-pulse inline-block">
-    🦎 Volver a Semanas
-  </a>
-</div>
+  <footer class="text-center text-teal-200 py-8 mt-10 w-full relative z-10">
+    <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+    <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>
+  </footer>
 
 </body>
 </html>
