@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Semana 12 - Desarrollo de Aplicaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente medieval -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    .titulo-medieval {
+      font-family: 'UnifrakturCook', cursive;
+    }
+
+    /* Fondo con partículas e imagen (estable y oscuro) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+
+      background:
+        radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px),
+        url("FONFO.jpg") center/cover no-repeat;
+
+      background-size: 40px 40px, cover;
+      animation:
+        mover 10s linear infinite,
+        brilloFondo 6s ease-in-out infinite alternate;
+      filter: brightness(0.6);
+    }
+
+    @keyframes mover {
+      from { background-position: 0 0, center; }
+      to { background-position: 40px 40px, center; }
+    }
+
+    @keyframes brilloFondo {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
+    }
+
+    /* ANIMACIÓN DEL ENCABEZADO */
+    .titulo-animado {
+      background: linear-gradient(90deg, #03332df8, #0f8d74, #0c685d, #0f8d74, #03332df8);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 5s linear infinite;
+    }
+
+    @keyframes brillo {
+      to { background-position: 300% center; }
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-100 relative flex flex-col min-h-screen">
+
+  <!-- ENCABEZADO -->
+  <header class="relative text-white py-8 shadow-xl flex items-center justify-center z-10">
+    <!-- Logo a la izquierda -->
+    <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
+      <img src="LOGO.png" alt="Logo Universidad" class="h-24 w-auto">
+    </div>
+
+    <div class="text-center">
+      <h1 class="titulo-medieval titulo-animado text-5xl font-bold text-center drop-shadow-lg">
+        Semana 12
+      </h1>
+      <p class="titulo-medieval text-center text-teal-100 text-2xl mt-2 tracking-wide">
+        Desarrollo de Aplicaciones - Jeremy Barzola Caso
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container mx-auto px-6 py-12 flex-1 relative z-10">
+
+    <!-- TRABAJO 1 -->
+    <section class="mb-16 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-800">
+      <h2 class="titulo-medieval text-3xl mb-4 text-center" style="color:#03332df8;">
+        Enunciado 1:
+      </h2>
+
+      <!-- NUEVA INFORMACIÓN: Actividad 01 -->
+      <div class="bg-gray-800 border border-teal-700 rounded-xl p-6">
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <p>12</p>
+          <p>12</p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOTÓN GENERAL DE GITHUB -->
+    <div class="text-center mt-10">
+      <a href="https://github.com/777Jeremy/Ejercicios_Semana_12" target="_blank"
+         class="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg shadow-md border border-teal-400
+                hover:bg-gradient-to-r hover:from-teal-600 hover:to-teal-400
+                hover:shadow-teal-400/70 hover:scale-110
+                transition-all duration-500 animate-pulse">
+        💻 GitHub
+      </a>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="text-center text-teal-200 py-8 mt-10 w-full relative z-10">
+    <p class="text-sm">&copy; 2025 - Portafolio de Desarrollo de Aplicaciones</p>
+    <p class="mt-1 text-teal-300">Universidad Peruana Los Andes</p>  
+  </footer>
+
+  <!-- BOTÓN VOLVER -->
+  <div class="fixed right-6 top-6 z-20">
+    <a href="semanas.html"
+       class="titulo-medieval text-white text-lg px-5 py-2 rounded-lg border border-teal-400
+              bg-gradient-to-r from-teal-600 to-teal-400 shadow-lg
+              hover:from-teal-400 hover:to-teal-600 hover:shadow-teal-300/70
+              hover:scale-110 transition-all duration-500 animate-pulse inline-block">
+      🦎 Volver a Semanas
+    </a>
+  </div>
+
+</body>
+</html>
